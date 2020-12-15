@@ -4,6 +4,20 @@ There are three test case set in this homework.
 
 You can use `make example`, `make test`, `make bonus` to run them.
 
+We provide simple argument parser in `parser.y`, if `output` is not `NULL`, please use it as assembly filename, otherwise you can use the PROGRAM name as filename.
+
+It would be something like:
+```
+PASS_HANDLE(codegen, ProgNode      , node){
+  char fn[128];
+  prog = node->name;
+  sprintf(fn, "%s.s", node->name);
+  fd = fopen(output ? output : fn, "w");
+  gen(";gen code into the file\n");
+  fclose(fd);
+}
+```
+
 - Use float to implement real type.
 
 Bonus:
