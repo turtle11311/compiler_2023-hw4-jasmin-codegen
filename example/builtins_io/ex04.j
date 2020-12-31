@@ -67,8 +67,6 @@ LAB2:
 L1:
     ldc 0
 L2:
-    ldc 1
-    ineg
     invokestatic ex04/writelnI(I)V
     ldc 1.000000
     fneg
