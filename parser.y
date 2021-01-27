@@ -69,7 +69,7 @@ prog : PROGRAM {
 void yyerror(const char *msg) {
     fprintf(stderr,
             "[ERROR] line %4d:%3d %s, Unmatched token: %s\n",
-            line_no, col_no-(int)yyleng+1, buffer, yytext);
+            line_no, col_no - yyleng, buffer, yytext);
     pass_error = 1;
 }
 

@@ -14,6 +14,11 @@
                  (if (null? args)
                    (last-continuation last-value)
                    (apply last-continuation args))))))
-(define main (lambda () (make-generator (lambda (return) (define a 0)   (begin (display a) (newline) )))))
+(define (div x y) (if (and (exact-integer? x) (exact-integer? y)) (floor/ x y) (/ x y)))(define (pascal-display x)
+  (cond ((and (not (exact-integer? x)) (real? x)) (display (exact->inexact x)))
+        ((eq? x #t) (display 1))
+        ((eq? x #f) (display 0))
+        (#t (display x))))
+(define main (lambda () (make-generator (lambda (return) (define a 0)   (begin (pascal-display a) (newline) )))))
 
 ((main))

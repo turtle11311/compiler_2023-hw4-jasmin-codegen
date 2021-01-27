@@ -51,9 +51,6 @@ bonus: all jasmin.jar
 example: all jasmin.jar
 	make test -C example/
 
-check: all
-	make check -C test/
-
 pack:
 	make clean
 	zip -r icd20-hw4.zip . -x ".*" -x "*.zip" -x "test/*"

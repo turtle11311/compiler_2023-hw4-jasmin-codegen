@@ -12,7 +12,8 @@ class/io.class: class
 ifeq (,$(wildcard ../jasmin.jar))
 	jasmin -d class io.j
 else
-	java -jar ../jasmin.jar -d class io.j
+	jasmin -d class io.j
+	# java -jar ../jasmin.jar -d class io.j
 endif
 
 assembly/%: %.p
@@ -27,7 +28,8 @@ endif
 ifeq (,$(wildcard ../jasmin.jar))
 	jasmin -d class $@.j
 else
-	java -jar ../jasmin.jar -d class $@.j
+	jasmin -d class $@.j
+	# java -jar ../jasmin.jar -d class $@.j
 endif
 
 test: all
