@@ -8,12 +8,13 @@ We provide simple argument parser in `parser.y`, if `output` is not `NULL`, plea
 
 It would be something like:
 ```
-PASS_HANDLE(codegen, ProgNode      , node){
+codegen( ProgNode ){
   char fn[128];
   prog = node->name;
-  sprintf(fn, "%s.s", node->name);
-  fd = fopen(output ? output : fn, "w");
-  gen(";gen code into the file\n");
+  // Output format *.j
+  sprintf(fn, "%s.j", node->name);
+  fd = fopen(output ? output : fn, "w"); 
+  gen("..."); // Generate your assembly...
   fclose(fd);
 }
 ```
@@ -41,3 +42,4 @@ java/lang/StringBuffer/append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
 Hints:
 - you may initialize the variables manually
+- We have some built-in function such as `writelnI`, `writelnS`, and you can find the implementation at `example/builtin-io/*.j`.
