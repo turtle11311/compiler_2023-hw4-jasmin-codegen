@@ -1,7 +1,7 @@
 SCANNER = scanner
 PARSER  = parser
-CC      = gcc #gcc
-CFLAGS  = -Iinclude -Wall -std=gnu11 -g -MMD #gnu11
+CC      = g++
+CFLAGS  = -Iinclude -Wall -std=c++17 -g -MMD #c++17
 LEX     = flex
 YACC    = bison
 LIBS    = -lfl
@@ -53,7 +53,7 @@ example: all jasmin.jar
 
 pack:
 	make clean
-	zip -r icd22-hw4.zip . -x ".*" -x "*.zip" -x "test/*"
+	zip -r 510557011-codegen.zip . -x ".*" -x "*.zip" -x "test/*"
 
 .PHONY: clean
 

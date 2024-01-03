@@ -1,1 +1,15 @@
 jasmin.jar
+
+# generated files
+## Test
+test/output
+## parser
+parser
+parser.output
+
+## objs
+obj/
+## handin file
+510557011-codegen.zip
+# VS Code files
+.vscode/
